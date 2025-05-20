@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.API\\FoodTracking.API.csproj": {}
+    "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.API\\FoodTracking.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.API\\FoodTracking.API.csproj": {
+    "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.API\\FoodTracking.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.API\\FoodTracking.API.csproj",
+        "projectUniqueName": "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.API\\FoodTracking.API.csproj",
         "projectName": "FoodTracking.API",
-        "projectPath": "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.API\\FoodTracking.API.csproj",
+        "projectPath": "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.API\\FoodTracking.API.csproj",
         "packagesPath": "C:\\Users\\ivanb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.API\\obj\\",
+        "outputPath": "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ivanb\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.Logic\\FoodTracking.Logic.csproj": {
-                "projectPath": "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.Logic\\FoodTracking.Logic.csproj"
+              "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Logic\\FoodTracking.Logic.csproj": {
+                "projectPath": "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Logic\\FoodTracking.Logic.csproj"
               }
             }
           }
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.Data\\FoodTracking.Data.csproj": {
+    "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Data\\FoodTracking.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.Data\\FoodTracking.Data.csproj",
+        "projectUniqueName": "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Data\\FoodTracking.Data.csproj",
         "projectName": "FoodTracking.Data",
-        "projectPath": "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.Data\\FoodTracking.Data.csproj",
+        "projectPath": "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Data\\FoodTracking.Data.csproj",
         "packagesPath": "C:\\Users\\ivanb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ivanb\\source\\repos\\FoodTrackingApp\\FoodTracking.Data\\obj\\",
+        "outputPath": "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ivanb\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -139,14 +139,14 @@
         }
       }
     },
-    "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.Logic\\FoodTracking.Logic.csproj": {
+    "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Logic\\FoodTracking.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.Logic\\FoodTracking.Logic.csproj",
+        "projectUniqueName": "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Logic\\FoodTracking.Logic.csproj",
         "projectName": "FoodTracking.Logic",
-        "projectPath": "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.Logic\\FoodTracking.Logic.csproj",
+        "projectPath": "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Logic\\FoodTracking.Logic.csproj",
         "packagesPath": "C:\\Users\\ivanb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.Logic\\obj\\",
+        "outputPath": "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Logic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ivanb\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -164,8 +164,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.Data\\FoodTracking.Data.csproj": {
-                "projectPath": "C:\\Users\\ivanb\\source\\repos\\FoodtrackingApp\\FoodTracking.Data\\FoodTracking.Data.csproj"
+              "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Data\\FoodTracking.Data.csproj": {
+                "projectPath": "C:\\Users\\ivanb\\Documents\\GitHub\\FoodTrackingApp\\FoodTracking.Data\\FoodTracking.Data.csproj"
               }
             }
           }

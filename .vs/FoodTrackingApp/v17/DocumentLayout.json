@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\ivanb\\source\\repos\\FoodTrackingApp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{94161F59-49DA-4C19-8DF9-FE2A280CA06E}|FoodTracking.Data\\FoodTracking.Data.csproj|c:\\users\\ivanb\\source\\repos\\foodtrackingapp\\foodtracking.data\\fooddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94161F59-49DA-4C19-8DF9-FE2A280CA06E}|FoodTracking.Data\\FoodTracking.Data.csproj|solutionrelative:foodtracking.data\\fooddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94161F59-49DA-4C19-8DF9-FE2A280CA06E}|FoodTracking.Data\\FoodTracking.Data.csproj|c:\\users\\ivanb\\source\\repos\\foodtrackingapp\\foodtracking.data\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94161F59-49DA-4C19-8DF9-FE2A280CA06E}|FoodTracking.Data\\FoodTracking.Data.csproj|solutionrelative:foodtracking.data\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94161F59-49DA-4C19-8DF9-FE2A280CA06E}|FoodTracking.Data\\FoodTracking.Data.csproj|c:\\users\\ivanb\\source\\repos\\foodtrackingapp\\foodtracking.data\\foodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94161F59-49DA-4C19-8DF9-FE2A280CA06E}|FoodTracking.Data\\FoodTracking.Data.csproj|solutionrelative:foodtracking.data\\foodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94161F59-49DA-4C19-8DF9-FE2A280CA06E}|FoodTracking.Data\\FoodTracking.Data.csproj|c:\\users\\ivanb\\source\\repos\\foodtrackingapp\\foodtracking.data\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94161F59-49DA-4C19-8DF9-FE2A280CA06E}|FoodTracking.Data\\FoodTracking.Data.csproj|solutionrelative:foodtracking.data\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,6 +67,58 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\ivanb\\source\\repos\\FoodTrackingApp\\FoodTracking.Data\\Class1.cs",
+              "RelativeDocumentMoniker": "FoodTracking.Data\\Class1.cs",
+              "ToolTip": "C:\\Users\\ivanb\\source\\repos\\FoodTrackingApp\\FoodTracking.Data\\Class1.cs",
+              "RelativeToolTip": "FoodTracking.Data\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:01:54.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FoodRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ivanb\\source\\repos\\FoodTrackingApp\\FoodTracking.Data\\FoodRepository.cs",
+              "RelativeDocumentMoniker": "FoodTracking.Data\\FoodRepository.cs",
+              "ToolTip": "C:\\Users\\ivanb\\source\\repos\\FoodTrackingApp\\FoodTracking.Data\\FoodRepository.cs",
+              "RelativeToolTip": "FoodTracking.Data\\FoodRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:01:42.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FoodDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ivanb\\source\\repos\\FoodTrackingApp\\FoodTracking.Data\\FoodDbContext.cs",
+              "RelativeDocumentMoniker": "FoodTracking.Data\\FoodDbContext.cs",
+              "ToolTip": "C:\\Users\\ivanb\\source\\repos\\FoodTrackingApp\\FoodTracking.Data\\FoodDbContext.cs",
+              "RelativeToolTip": "FoodTracking.Data\\FoodDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:01:16.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Food.cs",
+              "DocumentMoniker": "C:\\Users\\ivanb\\source\\repos\\FoodTrackingApp\\FoodTracking.Data\\Models\\Food.cs",
+              "RelativeDocumentMoniker": "FoodTracking.Data\\Models\\Food.cs",
+              "ToolTip": "C:\\Users\\ivanb\\source\\repos\\FoodTrackingApp\\FoodTracking.Data\\Models\\Food.cs",
+              "RelativeToolTip": "FoodTracking.Data\\Models\\Food.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:01:07.115Z",
+              "EditorCaption": ""
             }
           ]
         }

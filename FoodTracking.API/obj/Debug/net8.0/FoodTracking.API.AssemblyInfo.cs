@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FoodTracking.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+571b87510b2d8ee6e678b6a7bda75f12481515fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57c204e092923778e85fda5923b39e6fd2db6f15")]
 [assembly: System.Reflection.AssemblyProductAttribute("FoodTracking.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FoodTracking.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

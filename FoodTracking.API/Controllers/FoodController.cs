@@ -1,6 +1,9 @@
+using FoodTracking.Logic.Domain;
 using FoodTracking.Logic.Dtos;
 using FoodTracking.Logic.Interfaces;
+using FoodTracking.Logic.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoodTracking.API.Controllers
 {
@@ -8,51 +11,90 @@ namespace FoodTracking.API.Controllers
     [Route("api/[controller]")]
     public class FoodController : ControllerBase
     {
-        private readonly IFoodRepository _foodRepository;
+        private FoodService foodService;
+        private readonly ILogger<FoodController> logger;
 
-        public FoodController(IFoodRepository foodRepository)
+        public FoodController(FoodService foodService, ILogger<FoodController> logger)
         {
-            _foodRepository = foodRepository;
+            this.logger = logger;
+            this.foodService = foodService;
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<FoodDto>> GetAll()
         {
-            return Ok(_foodRepository.GetAllFoods());
+            var foods = foodService.GetAllFoods();
+            var foodDtos = foods.Select(f => f.GetFoodDto(f)).ToList();
+            return Ok(foodDtos);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<FoodDto> GetById(int id)
+        [HttpGet("{name}")]
+        public ActionResult<FoodDto> GetByName(string name)
         {
-            var food = _foodRepository.GetFoodById(id);
-            if (food == null)
-                return NotFound();
-
-            return Ok(food);
+            try
+            {
+                var food = foodService.GetFoodByName(name);
+                if (food == null)
+                {
+                    return NotFound();
+                }
+                return Ok(food.GetFoodDto(food));
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error getting food by name");
+                return StatusCode(500, "Internal server error");
+            }
         }
 
         [HttpPost]
         public IActionResult Create(FoodDto food)
         {
-            _foodRepository.AddFood(food);
-            return CreatedAtAction(nameof(GetById), new { id = food.Id }, food);
+            try
+            {
+                foodService.AddFood(food);
+                return CreatedAtAction(nameof(GetByName), new { name = food.Name }, food);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error creating food");
+                return StatusCode(500, "Internal server error");
+            }
         }
 
         [HttpPut("{id}")]
         public IActionResult Update(int id, FoodDto food)
         {
             if (id != food.Id)
-                return BadRequest();
+            {
+                return BadRequest("Food ID in URL does not match Food ID in body");
+            }
 
-            _foodRepository.UpdateFood(food);
-            return NoContent();
+            try
+            {
+                foodService.UpdateFood(food);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error updating food");
+                return StatusCode(500, "Internal server error");
+            }
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _foodRepository.DeleteFood(id);
-            return NoContent();
+            try
+            {
+                foodService.DeleteFood(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error deleting food");
+                return StatusCode(500, "Internal server error");
+            }
         }
     }
 } 

@@ -1,22 +1,26 @@
-using FoodTracking.Data.Models;
 using FoodTracking.Logic.Dtos;
 using FoodTracking.Logic.Interfaces;
 using System.Data.SqlClient;
 using System.Configuration;
+using Microsoft.IdentityModel.Protocols;
 
 
 namespace FoodTracking.Data
 {
     public class FoodRepository : IFoodRepository
     {
-        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private string connectionString = String.Empty;
+        public FoodRepository(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
 
         public List<FoodDto> GetAllFoods()
         {
             List<FoodDto> foods = new List<FoodDto>();
-            string sql = "SELECT Id, Name, Description, Calories, DateAdded FROM Foods";
+            string sql = "SELECT Id, Name, Description, Calories, DateAdded FROM Food";
 
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
@@ -30,8 +34,8 @@ namespace FoodTracking.Data
                                 Id = reader.GetInt32(reader.GetOrdinal("Id")),
                                 Name = reader.GetString(reader.GetOrdinal("Name")),
                                 Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString(reader.GetOrdinal("Description")),
-                                Calories = reader.IsDBNull(reader.GetOrdinal("Calories")) ? (decimal?)null : reader.GetDecimal(reader.GetOrdinal("Calories")),
-                                DateAdded = reader.GetDateTime(reader.GetOrdinal("DateAdded"))
+                                Calories = reader.IsDBNull(reader.GetOrdinal("Calories")) ? 0 : reader.GetDecimal(reader.GetOrdinal("Calories")),
+                                DateAdded = reader.IsDBNull(reader.GetOrdinal("DateAdded")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("DateAdded"))
                             });
                         }
                     }
@@ -42,47 +46,45 @@ namespace FoodTracking.Data
 
         public void AddFood(FoodDto food)
         {
-            string sql = "INSERT INTO Foods (Name, Description, Calories, DateAdded) VALUES (@Name, @Description, @Calories, @DateAdded)";
+            string sql = "INSERT INTO Food (Name, Description, Calories, DateAdded) VALUES (@Name, @Description, @Calories, @DateAdded)";
 
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
-                    // Add parameters
                     command.Parameters.AddWithValue("@Name", food.Name);
                     command.Parameters.AddWithValue("@Description", (object)food.Description);
                     command.Parameters.AddWithValue("@Calories", (object)food.Calories);
                     command.Parameters.AddWithValue("@DateAdded", DateTime.UtcNow);
 
                     connection.Open();
-                    command.ExecuteNonQuery(); // Execute the INSERT command
+                    command.ExecuteNonQuery();
                 }
             }
         }
 
-        public FoodDto? GetFoodById(int id)
+        public FoodDto? GetFoodByName(string name)
         {
             FoodDto? food = null;
-            string sql = "SELECT Id, Name, Description, Calories, DateAdded FROM Foods WHERE Id = @Id";
+            string sql = "SELECT Id, Name, Description, Calories, DateAdded FROM Food WHERE Name = @Name";
 
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
-                    // Add parameter for Id
-                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@Name", name);
 
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        if (reader.Read()) // Read a single row
+                        if (reader.Read()) // Reads one row
                         {
                             food = new FoodDto
                             {
                                 Id = reader.GetInt32(reader.GetOrdinal("Id")),
                                 Name = reader.GetString(reader.GetOrdinal("Name")),
-                                Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString(reader.GetOrdinal("Description")),
-                                Calories = reader.IsDBNull(reader.GetOrdinal("Calories")) ? (decimal?)null : reader.GetDecimal(reader.GetOrdinal("Calories")),
+                                Description = reader.GetString(reader.GetOrdinal("Description")),
+                                Calories = reader.GetDecimal(reader.GetOrdinal("Calories")),
                                 DateAdded = reader.GetDateTime(reader.GetOrdinal("DateAdded"))
                             };
                         }
@@ -94,37 +96,35 @@ namespace FoodTracking.Data
 
         public void UpdateFood(FoodDto food)
         {
-            string sql = "UPDATE Foods SET Name = @Name, Description = @Description, Calories = @Calories WHERE Id = @Id";
+            string sql = "UPDATE Food SET Name = @Name, Description = @Description, Calories = @Calories WHERE Id = @Id";
 
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
-                    // Add parameters
                     command.Parameters.AddWithValue("@Name", food.Name);
-                    command.Parameters.AddWithValue("@Description", (object)food.Description ?? DBNull.Value); // Handle potential null Description
-                    command.Parameters.AddWithValue("@Calories", (object)food.Calories ?? DBNull.Value); // Handle potential null Calories
+                    command.Parameters.AddWithValue("@Description", (object)food.Description ?? DBNull.Value); 
+                    command.Parameters.AddWithValue("@Calories", (object)food.Calories ?? DBNull.Value);
                     command.Parameters.AddWithValue("@Id", food.Id);
 
                     connection.Open();
-                    command.ExecuteNonQuery(); // Execute the UPDATE command
+                    command.ExecuteNonQuery();
                 }
             }
         }
 
         public void DeleteFood(int id)
         {
-            string sql = "DELETE FROM Foods WHERE Id = @Id";
+            string sql = "DELETE FROM Food WHERE Id = @Id";
 
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
-                    // Add parameter for Id
                     command.Parameters.AddWithValue("@Id", id);
 
                     connection.Open();
-                    command.ExecuteNonQuery(); // Execute the DELETE command
+                    command.ExecuteNonQuery();
                 }
             }
         }

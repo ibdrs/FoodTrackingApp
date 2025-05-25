@@ -6,7 +6,7 @@ namespace FoodTracking.Logic.Interfaces
     {
         public List<FoodDto> GetAllFoods();
         public void AddFood(FoodDto food);
-        public FoodDto? GetFoodById(int id);
+        public FoodDto? GetFoodByName(string name);
         public void UpdateFood(FoodDto food);
         public void DeleteFood(int id);
     }

@@ -1,32 +1,37 @@
 using FoodTracking.Data;
+using FoodTracking.Logic.Services;
 using FoodTracking.Logic.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Add CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
         builder =>
         {
             builder.AllowAnyOrigin()
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
+                .AllowAnyMethod()
+                .AllowAnyHeader();
         });
 });
 
-// Add DbContext
-builder.Services.AddDbContext<FoodDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddTransient<IFoodRepository>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-// Register services
-builder.Services.AddScoped<IFoodRepository, FoodRepository>();
+    if (string.IsNullOrWhiteSpace(connectionString))
+        throw new InvalidOperationException("Connection string not found in appsettings.json");
+
+    return new FoodRepository(connectionString);
+});
+
+
+builder.Services.AddTransient<FoodService>();
+
 
 var app = builder.Build();
 

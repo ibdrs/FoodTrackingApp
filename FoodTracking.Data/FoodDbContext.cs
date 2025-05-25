@@ -3,12 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoodTracking.Data
 {
-    public class FoodDbContext : DbContext
+    public class FoodDbContext(DbContextOptions<FoodDbContext> options) : DbContext(options)
     {
-        public FoodDbContext(DbContextOptions<FoodDbContext> options) : base(options)
-        {
-        }
-
         public DbSet<Food> Foods { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

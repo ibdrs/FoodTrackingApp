@@ -5,24 +5,31 @@ namespace FoodTracking.Logic.Domain
     public class Food
     {
         public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; set; }
         public string? Description { get; set; }
         public decimal Calories { get; set; }
         public DateTime DateAdded { get; set; }
         public decimal Protein { get; set; }
         public decimal Carbs { get; set; }
         public decimal Fats { get; set; }
-        public string? Micronutrients { get; set; }
+        public string? Micronutrients { get; set; } = string.Empty;
         public decimal ServingSize { get; set; }
-        public string ServingUnit { get; set; } = string.Empty;
+        public string ServingUnit { get; set; }
 
-        public Food(int id, string name, string description, decimal calories, DateTime dateAdded)
+        public Food() { }
+        public Food(int id, string name, string? description, decimal calories, DateTime dateAdded, decimal protein, decimal carbs, decimal fats, string? micronutrients, decimal servingSize, string servingUnit)
         {
             Id = id;
             Name = name;
             Description = description;
             Calories = calories;
             DateAdded = dateAdded;
+            Protein = protein;
+            Carbs = carbs;
+            Fats = fats;
+            Micronutrients = micronutrients;
+            ServingSize = servingSize;
+            ServingUnit = servingUnit;
         }
 
         public Food(FoodDto foodDto)

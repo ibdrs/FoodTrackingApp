@@ -1,6 +1,6 @@
 using FoodTracking.Data;
 using FoodTracking.Logic.Services;
-using FoodTracking.Logic.Interfaces;
+using FoodTracking.Data.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -29,9 +29,19 @@ builder.Services.AddTransient<IFoodRepository>(provider =>
     return new FoodRepository(connectionString);
 });
 
+builder.Services.AddTransient<IUserRepository>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+    if (string.IsNullOrWhiteSpace(connectionString))
+        throw new InvalidOperationException("Connection string not found in appsettings.json");
+
+    return new UserRepository(connectionString);
+});
 
 builder.Services.AddTransient<FoodService>();
-
+builder.Services.AddTransient<UserService>();
 
 var app = builder.Build();
 

@@ -1,5 +1,5 @@
-﻿using FoodTracking.Logic.Dtos;
-using FoodTracking.Logic.Interfaces;
+﻿using FoodTracking.Data.Dtos;
+using FoodTracking.Data.Interfaces;
 using FoodTracking.Logic.Domain;
 using System;
 using System.Collections.Generic;

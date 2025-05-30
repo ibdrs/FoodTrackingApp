@@ -1,9 +1,6 @@
-using FoodTracking.Logic.Dtos;
-using FoodTracking.Logic.Interfaces;
-using System.Data.SqlClient;
-using System.Configuration;
-using Microsoft.IdentityModel.Protocols;
-
+using Microsoft.Data.SqlClient;
+using FoodTracking.Data.Dtos;
+using FoodTracking.Data.Interfaces;
 
 namespace FoodTracking.Data
 {

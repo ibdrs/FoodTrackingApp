@@ -1,9 +1,6 @@
-using FoodTracking.Logic.Domain;
-using FoodTracking.Logic.Dtos;
-using FoodTracking.Logic.Interfaces;
+using FoodTracking.Data.Dtos;
 using FoodTracking.Logic.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoodTracking.API.Controllers
 {
@@ -53,7 +50,7 @@ namespace FoodTracking.API.Controllers
             try
             {
                 foodService.AddFood(food);
-                return CreatedAtAction(nameof(GetByName), new { name = food.Name }, food);
+                return StatusCode(201, food);
             }
             catch (Exception ex)
             {

@@ -3,31 +3,17 @@
     <h2 class="form-title">Create Account</h2>
     <form @submit.prevent="handleSubmit" class="register-form">
       <div class="form-group">
-        <label for="name">Full Name</label>
+        <label for="username">Username</label>
         <InputText
-          id="name"
-          v-model="form.name"
+          id="username"
+          v-model="form.username"
+          type="text"
           class="w-full"
-          :class="{ 'p-invalid': v$.name.$error }"
-          placeholder="Enter your full name"
+          :class="{ 'p-invalid': v$.username.$error }"
+          placeholder="Enter your username"
         />
-        <small class="p-error" v-if="v$.name.$error">
-          {{ v$.name.$errors[0].$message }}
-        </small>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <InputText
-          id="email"
-          v-model="form.email"
-          type="email"
-          class="w-full"
-          :class="{ 'p-invalid': v$.email.$error }"
-          placeholder="Enter your email"
-        />
-        <small class="p-error" v-if="v$.email.$error">
-          {{ v$.email.$errors[0].$message }}
+        <small class="p-error" v-if="v$.username.$error">
+          {{ v$.username.$errors[0].$message }}
         </small>
       </div>
 
@@ -136,16 +122,14 @@ const termsVisible = ref(false)
 const privacyVisible = ref(false)
 
 const form = reactive({
-  name: '',
-  email: '',
+  username: '',
   password: '',
   confirmPassword: '',
   acceptTerms: false
 })
 
 const rules = {
-  name: { required },
-  email: { required, email },
+  username: { required },
   password: { required, minLength: minLength(6) },
   confirmPassword: { required, sameAs: sameAs(form.password) },
   acceptTerms: { required }
@@ -163,17 +147,20 @@ const handleSubmit = async () => {
   loading.value = true
 
   try {
-    // TODO: Implement actual registration logic
-    await new Promise(resolve => setTimeout(resolve, 1000)) // Simulated API call
+    // TODO: Implement actual registration logic: Call your backend API to register the user
+    // Use form.username and form.password
+    // Example: await api.post('/auth/register', { username: form.username, password: form.password });
+    
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated API call
     
     toast.add({
       severity: 'success',
       summary: 'Success',
       detail: 'Account created successfully!',
       life: 3000
-    })
+    });
 
-    router.push('/auth/login')
+    router.push('/auth/login');
   } catch (error) {
     toast.add({
       severity: 'error',

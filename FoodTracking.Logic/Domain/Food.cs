@@ -1,4 +1,4 @@
-﻿using FoodTracking.Logic.Dtos;
+﻿using FoodTracking.Data.Dtos;
 
 namespace FoodTracking.Logic.Domain
 {

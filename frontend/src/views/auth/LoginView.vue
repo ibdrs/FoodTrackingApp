@@ -3,17 +3,17 @@
     <h2 class="form-title">Welcome Back</h2>
     <form @submit.prevent="handleSubmit" class="login-form">
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="username">Username</label>
         <InputText
-          id="email"
-          v-model="form.email"
-          type="email"
+          id="username"
+          v-model="form.username"
+          type="text"
           class="w-full"
-          :class="{ 'p-invalid': v$.email.$error }"
-          placeholder="Enter your email"
+          :class="{ 'p-invalid': v$.username.$error }"
+          placeholder="Enter your username"
         />
-        <small class="p-error" v-if="v$.email.$error">
-          {{ v$.email.$errors[0].$message }}
+        <small class="p-error" v-if="v$.username.$error">
+          {{ v$.username.$errors[0].$message }}
         </small>
       </div>
 
@@ -84,13 +84,13 @@ const toast = useToast()
 const loading = ref(false)
 
 const form = reactive({
-  email: '',
+  username: '',
   password: '',
   remember: false
 })
 
 const rules = {
-  email: { required, email },
+  username: { required },
   password: { required, minLength: minLength(6) }
 }
 
@@ -106,18 +106,21 @@ const handleSubmit = async () => {
   loading.value = true
 
   try {
-    // TODO: Implement actual login logic
-    await new Promise(resolve => setTimeout(resolve, 1000)) // Simulated API call
+    // TODO: Implement actual login logic: Call your backend API to authenticate the user
+    // Use form.username and form.password
+    // Example: await api.post('/auth/login', { username: form.username, password: form.password });
     
-    // Store token and user data
-    localStorage.setItem('token', 'dummy-token')
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated API call
+    
+    // Assuming successful login, store the token and possibly user data
+    localStorage.setItem('token', 'dummy-token'); // Replace with actual token from backend
     
     toast.add({
       severity: 'success',
       summary: 'Success',
       detail: 'Welcome back!',
       life: 3000
-    })
+    });
 
     // Redirect to the intended page or dashboard
     const redirectPath = route.query.redirect as string || '/'

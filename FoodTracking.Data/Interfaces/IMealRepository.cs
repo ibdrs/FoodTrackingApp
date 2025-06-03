@@ -1,13 +1,13 @@
-using FoodTracking.Logic.Domain;
+using FoodTracking.Data.Dtos;
 using System.Threading.Tasks;
 
 namespace FoodTracking.Data.Interfaces
 {
     public interface IMealRepository
     {
-        Task<Meal> GetByIdAsync(int id);
-        Task AddAsync(Meal meal);
-        Task UpdateAsync(Meal meal);
+        Task<MealDto> GetByIdAsync(int id);
+        Task AddAsync(MealDto meal);
+        Task UpdateAsync(MealDto meal);
         Task DeleteAsync(int id);
     }
 }

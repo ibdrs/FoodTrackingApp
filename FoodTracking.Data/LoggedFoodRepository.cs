@@ -1,5 +1,5 @@
 using FoodTracking.Data.Interfaces;
-using FoodTracking.Logic.Domain;
+using FoodTracking.Data.Dtos;
 using System.Threading.Tasks;
 
 namespace FoodTracking.Data
@@ -13,19 +13,19 @@ namespace FoodTracking.Data
             this.connectionString = connectionString;
         }
 
-        public Task<LoggedFood> GetByIdAsync(int id)
+        public Task<LoggedFoodDto> GetByIdAsync(int id)
         {
             // Implement database query
             throw new System.NotImplementedException();
         }
 
-        public Task AddAsync(LoggedFood loggedFood)
+        public Task AddAsync(LoggedFoodDto loggedFood)
         {
             // Implement database insertion
              throw new System.NotImplementedException();
         }
 
-        public Task UpdateAsync(LoggedFood loggedFood)
+        public Task UpdateAsync(LoggedFoodDto loggedFood)
         {
             // Implement database update
              throw new System.NotImplementedException();

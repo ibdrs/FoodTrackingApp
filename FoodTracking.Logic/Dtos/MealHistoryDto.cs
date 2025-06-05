@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace FoodTracking.Data.Dtos
+namespace FoodTracking.Logic.Dtos
 {
     public class MealHistoryDto
     {

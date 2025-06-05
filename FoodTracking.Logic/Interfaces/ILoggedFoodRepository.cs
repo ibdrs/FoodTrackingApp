@@ -1,7 +1,7 @@
-using FoodTracking.Data.Dtos;
+using FoodTracking.Logic.Dtos;
 using System.Threading.Tasks;
 
-namespace FoodTracking.Data.Interfaces
+namespace FoodTracking.Logic.Interfaces
 {
     public interface ILoggedFoodRepository
     {

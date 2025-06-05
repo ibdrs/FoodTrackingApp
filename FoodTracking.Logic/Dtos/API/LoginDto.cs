@@ -1,4 +1,4 @@
-﻿namespace FoodTracking.Data.Dtos.API
+﻿namespace FoodTracking.Logic.Dtos.API
 {
     public class LoginDto
     {

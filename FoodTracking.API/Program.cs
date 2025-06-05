@@ -1,6 +1,6 @@
 using FoodTracking.Data;
 using FoodTracking.Logic.Services;
-using FoodTracking.Data.Interfaces;
+using FoodTracking.Logic.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();

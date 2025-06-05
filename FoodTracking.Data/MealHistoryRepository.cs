@@ -1,5 +1,5 @@
-using FoodTracking.Data.Interfaces;
-using FoodTracking.Data.Dtos;
+using FoodTracking.Logic.Interfaces;
+using FoodTracking.Logic.Dtos;
 using System.Threading.Tasks;
 
 namespace FoodTracking.Data

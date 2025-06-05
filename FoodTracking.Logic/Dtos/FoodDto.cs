@@ -1,4 +1,4 @@
-namespace FoodTracking.Data.Dtos
+namespace FoodTracking.Logic.Dtos
 {
     public class FoodDto
     {

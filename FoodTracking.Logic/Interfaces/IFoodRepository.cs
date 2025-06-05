@@ -1,6 +1,6 @@
-using FoodTracking.Data.Dtos;
+using FoodTracking.Logic.Dtos;
 
-namespace FoodTracking.Data.Interfaces
+namespace FoodTracking.Logic.Interfaces
 {
     public interface IFoodRepository
     {

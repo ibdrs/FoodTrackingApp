@@ -1,4 +1,4 @@
-using FoodTracking.Data.Dtos;
+using FoodTracking.Logic.Dtos;
 using FoodTracking.Logic.Services;
 using Microsoft.AspNetCore.Mvc;
 

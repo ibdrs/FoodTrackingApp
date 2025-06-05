@@ -1,7 +1,7 @@
-using FoodTracking.Data.Dtos;
-using FoodTracking.Data.Dtos.API;
+using FoodTracking.Logic.Dtos;
+using FoodTracking.Logic.Dtos.API;
 using FoodTracking.Logic.Domain;
-using FoodTracking.Data.Interfaces;
+using FoodTracking.Logic.Interfaces;
 
 namespace FoodTracking.Logic.Services
 {

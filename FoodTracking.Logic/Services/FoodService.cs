@@ -1,11 +1,6 @@
 ﻿using FoodTracking.Logic.Dtos;
 using FoodTracking.Logic.Interfaces;
 using FoodTracking.Logic.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FoodTracking.Logic.Services
 {

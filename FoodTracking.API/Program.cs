@@ -40,8 +40,21 @@ builder.Services.AddTransient<IUserRepository>(provider =>
     return new UserRepository(connectionString);
 });
 
-builder.Services.AddTransient<FoodService>();
+builder.Services.AddTransient<IMealTypeRepository>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+    if (string.IsNullOrWhiteSpace(connectionString))
+        throw new InvalidOperationException("Connection string not found in appsettings.json");
+
+    return new MealTypeRepository(connectionString);
+});
+
 builder.Services.AddTransient<UserService>();
+builder.Services.AddTransient<FoodService>();
+builder.Services.AddTransient<MealTypeService>();
+
 
 var app = builder.Build();
 

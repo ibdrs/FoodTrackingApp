@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 namespace FoodTracking.API.Controllers
 {
     [ApiController]
-    [Route("api/User")]
+    [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
         private UserService userService;

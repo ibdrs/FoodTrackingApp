@@ -1,5 +1,4 @@
 using FoodTracking.Logic.Dtos;
-using System.Threading.Tasks;
 
 namespace FoodTracking.Logic.Interfaces
 {
@@ -9,5 +8,10 @@ namespace FoodTracking.Logic.Interfaces
         Task AddAsync(MealDto meal);
         Task UpdateAsync(MealDto meal);
         Task DeleteAsync(int id);
+        Task<IEnumerable<MealDto>> GetAllAsync();
     }
+<<<<<<< Updated upstream
 }
+=======
+} 
+>>>>>>> Stashed changes

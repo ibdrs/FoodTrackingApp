@@ -152,7 +152,7 @@ namespace FoodTracking.Data
                 Id = reader.GetInt32(reader.GetOrdinal("Id")),
                 Name = reader.GetString(reader.GetOrdinal("Name")),
                 Description = reader.IsDBNull(reader.GetOrdinal("Description"))
-                    ? null
+                    ? string.Empty
                     : reader.GetString(reader.GetOrdinal("Description")),
                 Calories = reader.GetDecimal(reader.GetOrdinal("Calories")),
                 DateAdded = reader.GetDateTime(reader.GetOrdinal("DateAdded")),
@@ -160,7 +160,7 @@ namespace FoodTracking.Data
                 Carbs = reader.GetDecimal(reader.GetOrdinal("Carbs")),
                 Fats = reader.GetDecimal(reader.GetOrdinal("Fats")),
                 Micronutrients = reader.IsDBNull(reader.GetOrdinal("Micronutrients"))
-                    ? null
+                    ? string.Empty
                     : reader.GetString(reader.GetOrdinal("Micronutrients")),
                 ServingSize = reader.GetDecimal(reader.GetOrdinal("ServingSize")),
                 ServingUnit = reader.GetString(reader.GetOrdinal("ServingUnit"))

@@ -2,6 +2,7 @@
 using FoodTracking.Logic.Interfaces;
 using FoodTracking.Logic.Domain;
 
+
 namespace FoodTracking.Logic.Services
 {
     public class FoodService

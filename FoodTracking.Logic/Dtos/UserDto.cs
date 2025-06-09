@@ -7,4 +7,4 @@ namespace FoodTracking.Logic.Dtos
         public required string Password { get; set; }
         public DateTime DateCreated { get; set; } = DateTime.UtcNow;
     }
-}
+} 

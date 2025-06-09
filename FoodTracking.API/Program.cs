@@ -40,6 +40,51 @@ builder.Services.AddTransient<IUserRepository>(provider =>
     return new UserRepository(connectionString);
 });
 
+builder.Services.AddTransient<IMealHistoryRepository>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+    if (string.IsNullOrWhiteSpace(connectionString))
+        throw new InvalidOperationException("Connection string not found in appsettings.json");
+    return new MealHistoryRepository(connectionString);
+});
+
+builder.Services.AddTransient<IMealRepository>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+    if (string.IsNullOrWhiteSpace(connectionString))
+        throw new InvalidOperationException("Connection string not found in appsettings.json");
+    return new MealRepository(connectionString);
+});
+
+builder.Services.AddTransient<ILoggedFoodRepository>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+    if (string.IsNullOrWhiteSpace(connectionString))
+        throw new InvalidOperationException("Connection string not found in appsettings.json");
+    return new LoggedFoodRepository(connectionString);
+});
+
+builder.Services.AddTransient<IMealRepository>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+    if (string.IsNullOrWhiteSpace(connectionString))
+        throw new InvalidOperationException("Connection string not found in appsettings.json");
+    return new MealRepository(connectionString);
+});
+
+builder.Services.AddTransient<ILoggedFoodRepository>(provider =>
+{
+    var configuration = provider.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+    if (string.IsNullOrWhiteSpace(connectionString))
+        throw new InvalidOperationException("Connection string not found in appsettings.json");
+    return new LoggedFoodRepository(connectionString);
+});
+
 builder.Services.AddTransient<IMealTypeRepository>(provider =>
 {
     var configuration = provider.GetRequiredService<IConfiguration>();
@@ -54,7 +99,7 @@ builder.Services.AddTransient<IMealTypeRepository>(provider =>
 builder.Services.AddTransient<UserService>();
 builder.Services.AddTransient<FoodService>();
 builder.Services.AddTransient<MealTypeService>();
-
+builder.Services.AddTransient<MealTrackingService>();
 
 var app = builder.Build();
 

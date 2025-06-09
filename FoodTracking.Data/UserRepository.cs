@@ -22,7 +22,7 @@ namespace FoodTracking.Data
                 // Check if username is taken
                 var checkcmd = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE Username = @Username", connection);
                 checkcmd.Parameters.AddWithValue("@Username", userDto.Username);
-                int count = (int)await checkcmd.ExecuteScalarAsync();
+                int count = Convert.ToInt32(await checkcmd.ExecuteScalarAsync() ?? 0);
                 if (count > 0)
                 {
                     throw new Exception("Username is already in use");
@@ -37,7 +37,7 @@ namespace FoodTracking.Data
                 cmd.Parameters.AddWithValue("@Password", userDto.Password);
                 cmd.Parameters.AddWithValue("@DateCreated", userDto.DateCreated);
 
-                var newId = (int)await cmd.ExecuteScalarAsync();
+                int newId = Convert.ToInt32(await cmd.ExecuteScalarAsync() ?? 0);
                 userDto.Id = newId;
 
                 return userDto;

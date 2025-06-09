@@ -7,4 +7,4 @@ namespace FoodTracking.Logic.Interfaces
         public Task<UserDto> AddUser(UserDto userDto);
         public Task<UserDto> ValidateUser(UserDto userDto);
     }
-}
+} 

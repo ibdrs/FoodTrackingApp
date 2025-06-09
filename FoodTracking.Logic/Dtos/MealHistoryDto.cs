@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace FoodTracking.Logic.Dtos
 {
     public class MealHistoryDto

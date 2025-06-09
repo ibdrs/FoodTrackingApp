@@ -9,6 +9,7 @@ namespace FoodTracking.Logic.Domain
         public required string Password { get; set; }
         public DateTime DateCreated { get; set; } = DateTime.UtcNow;
 
+        public User() { }
         public User(int id, string username, string password, DateTime dateCreated)
         {
             Id = id;

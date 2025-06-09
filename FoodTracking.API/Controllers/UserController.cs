@@ -1,4 +1,5 @@
 ﻿using FoodTracking.Logic.Services;
+using FoodTracking.Logic.Dtos;
 using FoodTracking.Logic.Dtos.API;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

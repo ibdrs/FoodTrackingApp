@@ -1,10 +1,6 @@
 using FoodTracking.Logic.Interfaces;
 using FoodTracking.Logic.Dtos;
 using Microsoft.Data.SqlClient;
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
 namespace FoodTracking.Data
 {

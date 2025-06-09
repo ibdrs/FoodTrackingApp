@@ -10,8 +10,4 @@ namespace FoodTracking.Logic.Interfaces
         Task DeleteAsync(int id);
         Task<IEnumerable<MealDto>> GetAllAsync();
     }
-<<<<<<< Updated upstream
 }
-=======
-} 
->>>>>>> Stashed changes

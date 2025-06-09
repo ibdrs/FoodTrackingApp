@@ -67,24 +67,6 @@ builder.Services.AddTransient<ILoggedFoodRepository>(provider =>
     return new LoggedFoodRepository(connectionString);
 });
 
-builder.Services.AddTransient<IMealRepository>(provider =>
-{
-    var configuration = provider.GetRequiredService<IConfiguration>();
-    var connectionString = configuration.GetConnectionString("DefaultConnection");
-    if (string.IsNullOrWhiteSpace(connectionString))
-        throw new InvalidOperationException("Connection string not found in appsettings.json");
-    return new MealRepository(connectionString);
-});
-
-builder.Services.AddTransient<ILoggedFoodRepository>(provider =>
-{
-    var configuration = provider.GetRequiredService<IConfiguration>();
-    var connectionString = configuration.GetConnectionString("DefaultConnection");
-    if (string.IsNullOrWhiteSpace(connectionString))
-        throw new InvalidOperationException("Connection string not found in appsettings.json");
-    return new LoggedFoodRepository(connectionString);
-});
-
 builder.Services.AddTransient<IMealTypeRepository>(provider =>
 {
     var configuration = provider.GetRequiredService<IConfiguration>();
